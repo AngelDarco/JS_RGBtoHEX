@@ -1,35 +1,48 @@
-  const container = document.querySelector('.container');
-document.addEventListener('DOMContentLoaded',()=>{
-    
-        change();
+const container = document.querySelector('.container');
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('result').addEventListener('click', () => { change() });
 })
 
-function change(){
-    let R = 0
-    let G = 36
-    let B = 255
+function change() {
+  let R = document.getElementById('R').value;
+  let G = document.getElementById('G').value;
+  let B = document.getElementById('B').value;
+  let A = document.getElementById('A').value;
 
-    let salida = ''
+  let RGB = [R, G, B, A];
+  let out = ''
+  let out02 = '';
 
-  //  Ejemplo de entrada: 0, 36, 255
-  //  Ejemplo de salida: #0024ff
-let contador = 0
+  //  Example In: 0, 36, 255
+  //  Example out: #0024ff
+  
+  let conunt = 0
+  let arr = [];
+  let hexd = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
 
-    let hexd = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F' ];
+  for (let z = 0; z < RGB.length; z++) {
+    if (RGB[3] == '') RGB[3] = 255
+    if (RGB[z] == undefined) RGB[z] = 0
     
-    for(; G > 0; G -= hexd.length){
-            console.warn(G)
-         for(let i = 0; i < hexd.length; i++){
-            if(G == hexd.length)
-            console.error('there')
-        } 
-        contador++
+    if (RGB[z] == 0) {
+      out = '00';
+      conunt = 0
     }
+    for (; RGB[z] > 0; RGB[z] -= hexd.length) {
+      if (RGB[z] > hexd.length) {
+        arr.push(conunt);
+        out = hexd[arr.length];
+      } else {
+        out += hexd[RGB[z]].toString()
+        arr = []
 
-console.log(salida)
+      }
+      conunt++
+    }
+    out02 += out;
+    conunt = 0
+  } //main for
 
-    
-
-
-    container.style.background= 'lightblue'
+  document.getElementById('hex').innerHTML = '#'+out02;
+  container.style.background = '#' + out02;
 }

@@ -4,22 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>hex algorithm</title>
     <style>
         *{
             background: #999;
+        }
+        h1{
+            text-align: center;
+            margin-top: 5%;
         }
         .container{
             width: 60%;
             height: 60vh;
             margin: 5% auto 0;
             border: 1px solid green;
+            display: flex;
+            flex-flow: column;
+        }
+        input,button{
+            width: 10%;
+            height: 20%;
+            margin: 1%;
+        }
+        .container div{
+            width: 80%;
+            font-size: 1.5rem;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: inherit;
+        }
+        p{
+            text-align: center;
+            font-size: 2rem;    
+            background: inherit;
+            font-weight: bolder;
+            text-shadow: 0 0 5px #fff,
+                         0 0 10px #fff
         }
     </style>
 </head>
 <body>
+    <h1>RGB to Hex Algorithm</h1>
     <div class="container">
-
+        <div class="inputs">
+            <input type="number" name="R" id="R" max="3" min="0" placeholder="  R">
+            <input type="number" name="G" id="G" max="3" min="0" placeholder="  G">
+            <input type="number" name="B" id="B" max="3" min="0" placeholder="  B">
+            <input type="number" name="A" id="A" min="0" max="3" placeholder="  A">
+            <button id="result"> change </button>
+        </div>
+        <div class="text">
+        <p id="hex"></p>
+        </div>
     </div>
 </body>
 <script src="app.js"></script>
