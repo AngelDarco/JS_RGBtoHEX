@@ -1,0 +1,48 @@
+*{
+    background: #555;
+    color: #fff;
+}
+h1{
+    text-align: center;
+    margin-top: 5%;
+}
+.container{
+    width: 60%;
+    height: 60vh;
+    margin: 5% auto 0;
+    border: 1px solid green;
+    display: flex;
+    flex-flow: column;
+}
+input{
+    width: 10%;
+    height: 20%;
+    margin: 5% auto;
+    font-weight: bolder;
+    color: #000;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: #c2ec03;
+    text-shadow: 0 0 3px #fff,
+                 0 0 5px #fff
+}
+input:focus{
+    outline: none;
+}
+.container div{
+    width: 80%;
+    font-size: 1.5rem;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: inherit;
+}
+p{
+    text-align: center;
+    font-size: 2rem;    
+    background: inherit;
+    font-weight: bolder;
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff
+}
